@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>UWIN Contact</title>
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/Minghkldy/contact/main/queen%20profile.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* ဗမာစာလုံး Font ထည့်သွင်းခြင်း */
+        @import url('https://fonts.googleapis.com/css2?family=Pyidaungsu&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', sans-serif;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        /* အဖြူကွက်မပေါ်စေရန် html အောက်ခံကို အနက်ရောင်ထားခြင်း */
+        html {
+            background-color: #000;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://raw.githubusercontent.com/Minghkldy/contact/main/12a347e1265d4747d0c574fb3bddacbb.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: scroll; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            overflow-x: hidden;
+            padding: 20px 15px; 
+            perspective: 1000px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+            min-height: auto; 
+            padding: 30px 0 0 0; /* Banner အောက်ခြေကပ်သွားစေရန် အောက်ခြေ Padding ကို 0 ထားသည် */
+            text-align: center;
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5); 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden; /* Banner ထောင့်တွေ ကွေးသွားစေရန် */
+        }
+
+        .logo-section {
+            margin-bottom: 20px;
+            padding: 0 20px;
+        }
+
+        /* Logo Floating Animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Banner Floating Animation */
+        @keyframes bannerPulse {
+            0% { transform: scale(1); filter: brightness(1); }
+            50% { transform: scale(1.02); filter: brightness(1.2); }
+            100% { transform: scale(1); filter: brightness(1); }
+        }
+
+        .logo-section img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid #FFD700;
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+            margin-bottom: 15px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        h1 {
+            font-size: 32px; /* ဖုန်းအတွက် ပိုလှစေရန် ဆိုဒ်ကိုညှိပေးထားသည် */
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(to bottom, #FFE359 0%, #FFB100 50%, #BD8200 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px; 
+            cursor: pointer;
+            transition: all 0.3s ease; 
+            -webkit-text-stroke: 0.5px rgba(255, 227, 89, 0.5);
+            text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+            line-height: 1.2;
+        }
+
+        h1:hover {
+            transform: translateY(-5px) scale(1.05); 
+            text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.7);
+        }
+
+        .welcome-text {
+            color: #FFD700;
+            font-size: 13px; /* ဖုန်းမှာ စာသားမထပ်စေရန် ဆိုဒ်အနည်းငယ်လျှော့သည် */
+            font-weight: bold; 
+            margin-bottom: 25px;
+            padding: 0 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.9);
+            line-height: 1.5; 
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+            margin-bottom: 25px; 
+            padding: 0 20px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            padding: 0 25px;
+            min-height: 55px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            width: 100%;
+            -webkit-tap-highlight-color: transparent;
+            transform-style: preserve-3d;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #FFD700;
+            transform: translateZ(30px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .link-card i, .link-card span:first-child {
+            width: 35px;
+            font-size: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 12px;
+            transform: translateZ(20px);
+        }
+
+        .link-text {
+            flex-grow: 1;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold; 
+            margin-right: 35px; 
+            transform: translateZ(10px);
+        }
+
+        /* Banner Styling */
+        .footer-banner {
+            width: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            line-height: 0; 
+            overflow: hidden;
+            position: relative;
+        }
+
+        .footer-banner img {
+            width: 100%; 
+            height: auto;
+            border-top: 2px solid rgba(255, 215, 0, 0.5);
+            object-fit: cover;
+            display: block;
+            animation: bannerPulse 4s ease-in-out infinite; 
+            transition: transform 0.5s ease;
+        }
+
+        .fa-facebook-messenger { color: #0084ff; }
+        .fa-viber { color: #7360f2; }
+        .fa-telegram { color: #0088cc; }
+        .fa-line { color: #00c300; }
+        .fa-bullhorn { color: #ffcc00; }
+
+        /* Desktop အတွက် နဂိုအတိုင်း ပြန်ထားပေးခြင်း */
+        @media (min-width: 700px) {
+            .container {
+                max-width: 480px;
+                padding-top: 40px;
+            }
+            .logo-section img {
+                width: 120px;
+                height: 120px;
+            }
+            h1 { 
+                font-size: 50px; 
+                margin-bottom: -5px;
+            }
+            .welcome-text { 
+                font-size: 18px; 
+                line-height: 1.2;
+            }
+            .link-card { min-height: 60px; }
+            .link-text { font-size: 16px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-section">
+        <img src="https://raw.githubusercontent.com/Minghkldy/contact/main/queen%20profile.jpg" alt="Logo">
+        <h1>UWIN</h1>
+        <p class="welcome-text">အရင်းနည်းနည်း အမြတ်များများ UWIN မှာကစား</p>
+    </div>
+
+    <div class="links-container">
+        <a href="https:///" class="link-card">
+            <span>🎰</span>
+            <span class="link-text">ဂိမ်း "Link"</span>
+        </a>
+
+        <a href="https://www.facebook.com/" class="link-card">
+            <i class="fab fa-facebook-messenger"></i>
+            <span class="link-text">Facebook Messenger ဆက်သွယ်ရန်</span>
+        </a>
+
+        <a href="viber://chat?number=" class="link-card">
+            <i class="fab fa-viber"></i>
+            <span class="link-text">Viber ဆက်သွယ်ရန်</span>
+        </a>
+
+        <a href="https://t.me/" class="link-card">
+            <i class="fab fa-telegram"></i>
+            <span class="link-text">Telegram ဆက်သွယ်ရန်</span>
+        </a>
+
+        <a href="https://line.me/" class="link-card">
+            <i class="fab fa-line"></i>
+            <span class="link-text">LINE ဆက်သွယ်ရန်</span>
+        </a>
+
+        <a href="https://" class="link-card">
+            <i class="fas fa-bullhorn"></i>
+            <span class="link-text">Telegram Tip Game Channel</span>
+        </a>
+    </div>
+
+    <div class="footer-banner">
+        <img src="https://raw.githubusercontent.com/Minghkldy/contact/main/photo_2026-04-24_08-53-27.jpg" alt="Queen 501 Banner">
+    </div>
+</div>
+
+</body>
+</html>
