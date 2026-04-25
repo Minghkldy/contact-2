@@ -158,11 +158,6 @@
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
-        /* Mouse ထောက်လိုက်လျှင် ခလုတ်စာလုံးကို ရွှေရောင်ပြောင်းစေရန် */
-        .link-card:hover .link-text {
-            color: #FFD700;
-        }
-
         .link-card i, .link-card span:first-child {
             width: 35px;
             font-size: 22px;
@@ -178,11 +173,24 @@
             text-align: center;
             font-size: 15px;
             font-weight: bold; 
-            /* စာလုံးအရောင် - အဖြူရောင်သို့ ပြောင်းထားသည် */
-            color: #FFFFFF;
             margin-right: 35px; 
             transform: translateZ(10px);
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* --- ခလုတ်တစ်ခုချင်းစီအတွက် စာလုံးအရောင် သတ်မှတ်ချက်များ --- */
+        .game-link .link-text { color: #FFD700; } /* Game Link - ရွှေရောင် */
+        .fb-link .link-text { color: #99d1ff; }   /* Messenger - အပြာနု */
+        .viber-link .link-text { color: #d1c9ff; } /* Viber - ခရမ်းနု */
+        .tele-link .link-text { color: #a3e0ff; }  /* Telegram - အပြာလင်း */
+        .line-link .link-text { color: #b2ffb2; }  /* LINE - အစိမ်းနု */
+        .tip-link .link-text { color: #fff1b2; }  /* Tip Channel - အဝါနု */
+
+        /* Mouse ထောက်လိုက်လျှင် အားလုံးကို အဖြူရောင်စစ်စစ်ပြောင်းပေးခြင်း */
+        .link-card:hover .link-text {
+            color: #FFFFFF !important;
+            text-shadow: 0px 0px 8px rgba(255,255,255,0.5);
         }
 
         /* Banner Styling */
@@ -245,32 +253,32 @@
     </div>
 
     <div class="links-container">
-        <a href="https:///" class="link-card">
+        <a href="https:///" class="link-card game-link">
             <span>🎰</span>
             <span class="link-text">ဂိမ်း "Link"</span>
         </a>
 
-        <a href="https://www.facebook.com/" class="link-card">
+        <a href="https://www.facebook.com/" class="link-card fb-link">
             <i class="fab fa-facebook-messenger"></i>
             <span class="link-text">Facebook Messenger ဆက်သွယ်ရန်</span>
         </a>
 
-        <a href="viber://chat?number=" class="link-card">
+        <a href="viber://chat?number=" class="link-card viber-link">
             <i class="fab fa-viber"></i>
             <span class="link-text">Viber ဆက်သွယ်ရန်</span>
         </a>
 
-        <a href="https://t.me/" class="link-card">
+        <a href="https://t.me/" class="link-card tele-link">
             <i class="fab fa-telegram"></i>
             <span class="link-text">Telegram ဆက်သွယ်ရန်</span>
         </a>
 
-        <a href="https://line.me/" class="link-card">
+        <a href="https://line.me/" class="link-card line-link">
             <i class="fab fa-line"></i>
             <span class="link-text">LINE ဆက်သွယ်ရန်</span>
         </a>
 
-        <a href="https://" class="link-card">
+        <a href="https://" class="link-card tip-link">
             <i class="fas fa-bullhorn"></i>
             <span class="link-text">Telegram Tip Game Channel</span>
         </a>
