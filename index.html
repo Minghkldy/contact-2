@@ -95,7 +95,7 @@
             background: linear-gradient(to bottom, #FFFACD 0%, #FFD700 50%, #B8860B 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 15px; /* UWIN နှင့် အောက်စာသားကြား အကွာအဝေး (Phone အတွက်) */
+            margin-bottom: 15px;
             cursor: pointer;
             transition: all 0.3s ease; 
             -webkit-text-stroke: 0.5px rgba(255, 227, 89, 0.5);
@@ -130,12 +130,13 @@
         .link-card {
             display: flex;
             align-items: center;
-            /* နောက်ခံကို ပိုကြည်လင်အောင် 0.03 သို့ လျှော့ချထားသည် */
-            background: rgba(255, 255, 255, 0.03); 
-            /* Blur ကို 4px သို့ လျှော့ချပြီး ကြည်လင်မှု ပိုကောင်းအောင် လုပ်ထားသည် */
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            /* နောက်ခံကို ပိုကြည်လင်အောင် 0.02 သို့ လျှော့ချထားသည် */
+            background: rgba(255, 255, 255, 0.02); 
+            /* Blur ကို 3px သို့ လျှော့ချလိုက်ခြင်းက မှန်ကြည်သား ပိုဆန်စေသည် */
+            backdrop-filter: blur(3px);
+            -webkit-backdrop-filter: blur(3px);
+            /* ဘောင်လိုင်းကို ပါးပါးကြည်ကြည်လေးဖြစ်အောင် 0.08 သို့ ညှိထားသည် */
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 50px;
             padding: 0 25px;
             min-height: 55px;
@@ -146,14 +147,14 @@
             width: 100%;
             -webkit-tap-highlight-color: transparent;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .link-card:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.12);
             border-color: #FFD700;
             transform: translateZ(30px) scale(1.02);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
         }
 
         .link-card i, .link-card span:first-child {
@@ -177,7 +178,6 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
-        /* ခလုတ်တစ်ခုချင်းစီအတွက် စာလုံးအရောင် သတ်မှတ်ချက်များ */
         .game-link .link-text { color: #FFD700; }
         .fb-link .link-text { color: #99d1ff; }
         .viber-link .link-text { color: #d1c9ff; }
@@ -227,7 +227,7 @@
             }
             h1 { 
                 font-size: 50px; 
-                margin-bottom: 20px; /* PC အတွက် UWIN နှင့် အောက်စာသားကြား အကွာအဝေး */
+                margin-bottom: 20px;
             }
             .welcome-text { 
                 font-size: 18px; 
