@@ -130,13 +130,13 @@
         .link-card {
             display: flex;
             align-items: center;
-            /* နောက်ခံကို ပိုကြည်လင်အောင် 0.02 သို့ လျှော့ချထားသည် */
-            background: rgba(255, 255, 255, 0.02); 
-            /* Blur ကို 3px သို့ လျှော့ချလိုက်ခြင်းက မှန်ကြည်သား ပိုဆန်စေသည် */
-            backdrop-filter: blur(3px);
-            -webkit-backdrop-filter: blur(3px);
-            /* ဘောင်လိုင်းကို ပါးပါးကြည်ကြည်လေးဖြစ်အောင် 0.08 သို့ ညှိထားသည် */
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            /* နောက်ခံကို အကြည်လင်ဆုံးအဆင့် 0.01 ထိ လျှော့ချထားသည် */
+            background: rgba(255, 255, 255, 0.01); 
+            /* Blur ကို အနည်းဆုံး 2px အထိလျှော့ချပြီး အနောက်ကပုံကို ကြည်လင်အောင်လုပ်ထားသည် */
+            backdrop-filter: blur(2px);
+            -webkit-backdrop-filter: blur(2px);
+            /* ဘောင်လိုင်းကို ပါးလွှာပြီး အကြည်ဆန်အောင် 0.05 ထားသည် */
+            border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 50px;
             padding: 0 25px;
             min-height: 55px;
@@ -147,11 +147,12 @@
             width: 100%;
             -webkit-tap-highlight-color: transparent;
             transform-style: preserve-3d;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .link-card:hover {
-            background: rgba(255, 255, 255, 0.12);
+            /* Mouse ထောက်ချိန်တွင် အဖြူရောင် အနည်းငယ် ပိုပေါ်လာစေရန် */
+            background: rgba(255, 255, 255, 0.1);
             border-color: #FFD700;
             transform: translateZ(30px) scale(1.02);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
@@ -245,7 +246,7 @@
     <div class="logo-section">
         <img src="https://raw.githubusercontent.com/Minghkldy/contact/main/queen%20profile.jpg" alt="Logo">
         <h1>UWIN</h1>
-        <p class="welcome-text">အရင်းနည်းနည်း အမြတ်များများ UWIN မှာကစား</p>
+        <p class="welcome-text">✨အရင်းနည်းနည်း အမြတ်များများ UWIN မှာကစား✨</p>
     </div>
 
     <div class="links-container">
