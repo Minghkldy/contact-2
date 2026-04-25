@@ -41,6 +41,26 @@
             perspective: 1000px;
         }
 
+        /* Falling Stars CSS */
+        .star {
+            position: fixed;
+            top: -10px;
+            background: radial-gradient(circle, #FFFACD 10%, #FFD700 80%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1; /* Container ရဲ့ အနောက်မှာရှိနေစေရန် */
+            filter: blur(1px);
+            opacity: 0.8;
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) translateX(30px);
+                opacity: 0;
+            }
+        }
+
         .container {
             width: 100%;
             max-width: 420px;
@@ -130,12 +150,9 @@
         .link-card {
             display: flex;
             align-items: center;
-            /* နောက်ခံကို အကြည်လင်ဆုံးအဆင့် 0.01 ထိ လျှော့ချထားသည် */
             background: rgba(255, 255, 255, 0.01); 
-            /* Blur ကို အနည်းဆုံး 2px အထိလျှော့ချပြီး အနောက်ကပုံကို ကြည်လင်အောင်လုပ်ထားသည် */
             backdrop-filter: blur(2px);
             -webkit-backdrop-filter: blur(2px);
-            /* ဘောင်လိုင်းကို ပါးလွှာပြီး အကြည်ဆန်အောင် 0.05 ထားသည် */
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 50px;
             padding: 0 25px;
@@ -151,7 +168,6 @@
         }
 
         .link-card:hover {
-            /* Mouse ထောက်ချိန်တွင် အဖြူရောင် အနည်းငယ် ပိုပေါ်လာစေရန် */
             background: rgba(255, 255, 255, 0.1);
             border-color: #FFD700;
             transform: translateZ(30px) scale(1.02);
@@ -285,6 +301,35 @@
         <img src="https://raw.githubusercontent.com/Minghkldy/contact/main/photo_2026-04-24_08-53-27.jpg" alt="Queen 501 Banner">
     </div>
 </div>
+
+<script>
+    // Falling Stars Generator
+    function createStar() {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        
+        // Random Position
+        star.style.left = Math.random() * 100 + 'vw';
+        
+        // Random Size (2px to 5px)
+        const size = Math.random() * 3 + 2 + 'px';
+        star.style.width = size;
+        star.style.height = size;
+        
+        // Random Speed (3s to 7s)
+        star.style.animationDuration = Math.random() * 4 + 3 + 's';
+        
+        document.body.appendChild(star);
+        
+        // Remove after animation finishes
+        setTimeout(() => {
+            star.remove();
+        }, 7000);
+    }
+
+    // Create a new star every 200ms
+    setInterval(createStar, 200);
+</script>
 
 </body>
 </html>
